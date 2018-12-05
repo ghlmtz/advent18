@@ -9,10 +9,10 @@ for l in lines:
 		threes += 1
 print(twos * threes)
 
-for N in range(len(lines)-1):
+for N in range(len(lines)):
 	for M in range(N):
 		s = -1
-		for i, (m,n) in enumerate(zip(lines[N+M],lines[N])):
+		for i, (m,n) in enumerate(zip(lines[M],lines[N])):
 			if m != n:
 				if s != -1:
 					s = -2
@@ -21,4 +21,3 @@ for N in range(len(lines)-1):
 					s = i
 		if s >= 0:
 			print(lines[N][:s] + lines[N][s+1:])
-			exit()
